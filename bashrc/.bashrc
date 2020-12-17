@@ -135,10 +135,23 @@ alias lampp="/opt/lampp/lampp"
 alias droits="stat -c '%a %n' *"
 alias sdca="cd ~/Ensimag/3A/SDCA/HP/SDCA/lab && sudo openvpn --config vpnlab4.conf"
 alias ..="cd .."
-alias ...="cd ..."
-alias ....="cd ...."
+alias ...="cd ../../"
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias l="ls"
+alias ll="ls -al"
+alias la="ls -a"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+##### PROMPT COLORS #####
+GREEN="\[\033[38;5;34m\]"
+YELLOW="\[\033[38;5;220m\]"
+BLUE="\[\033[38;5;39m\]"
+RESET="\[$(tput sgr0)\]"
+export PS1="${GREEN}\u@\h:${YELLOW}\w>${BLUE}\$(parse_git_branch)${RESET} "
 
 ##### rvm #####
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -1,0 +1,13 @@
+[core]
+    user = Daniel ASSOULINE
+    email = daniel.assouline@hotmail.fr
+    # whitespace = cr-at-eol
+    autocrlf = input
+	pager = less -+$LESS -R
+[user]
+    name = Daniel ASSOULINE
+    email = daniel.assouline@hotmail.fr
+[alias]
+    cm = commit -m
+    st = status
+    co = checkout
